@@ -1,0 +1,39 @@
+a {
+    display: block;
+}
+
+h1,h2 {
+    background: cornflowerblue;
+    color: white;
+    text-align: center;
+}
+
+p {
+    background: darkblue;
+    color: white;
+    padding: 20px;
+}
+
+.wrapper {
+    background: palegreen;
+    color: black;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.wrapper p {
+    color: lightblue;
+}
+
+#main-title {
+    font-size: 48px;
+}
+
+#para1 {
+    background: grey;
+}
+
+hr {
+    border: 5px solid palegoldenrod;
+    border-radius: 25px;
+}
