@@ -2,3 +2,30 @@
 * {
   font-family: helvetica !important;
 }
+
+/* global grow style */
+@media (min-width: 768px) {
+  .grow {
+    transition: transform .5s;
+  }
+  .grow:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+ }
+
+/* global highlight style */
+.highlight {
+  transition: color .5s;
+  cursor: pointer;
+}
+.highlight:hover {
+  color: #1266F1;
+}
+
+/* Global number highligh */
+.number-highlight {
+  font-size: 32px;
+  font-weight: bold;
+  color: #1266F1;
+}
