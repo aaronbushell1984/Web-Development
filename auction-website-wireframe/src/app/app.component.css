@@ -17,4 +17,21 @@ footer > div > span,a {
   font-size: 12px;
 }
 
+.grow {
+  transition: transform .5s;
+}
+
+.grow:hover {
+  transform: scale(1.1);
+}
+
+.highlight {
+  transition: color .5s;
+  cursor: pointer;
+}
+
+.highlight:hover {
+  color: #1266F1;
+}
+
 
