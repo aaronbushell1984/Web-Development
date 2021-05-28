@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ExpanderService } from '../expander.service';
 
 @Component({
@@ -6,24 +7,29 @@ import { ExpanderService } from '../expander.service';
   templateUrl: './featured.component.html',
   styleUrls: ['./featured.component.css']
 })
-export class FeaturedComponent implements OnInit {
+export class FeaturedComponent implements OnInit, OnDestroy {
   dealCollapse:Boolean = false;
+  expanderServiceSub: Subscription = new Subscription
 
   constructor(
     private expanderService: ExpanderService
     ) { }
 
   ngOnInit() {
-    this.expanderService.dealCollapsed
+    this.expanderServiceSub = this.expanderService.dealCollapsed
       .subscribe(
         (dealCollapse: boolean) => {
-          this.dealCollapse = dealCollapse
+          this.dealCollapse = dealCollapse;
         }
       );
   }
 
   onCollapse() {
-    this.expanderService.collapseDeal()
+    this.expanderService.collapseDeal();
+  }
+
+  ngOnDestroy() {
+    this.expanderServiceSub.unsubscribe();
   }
 
 }
